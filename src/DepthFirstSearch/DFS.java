@@ -21,6 +21,17 @@ public class DFS {
         }
     }
 
+    private void dfsRecursive(Vertex v){
+        System.out.println(v + " ");
+        for(Vertex vertex : v.getNeighbourList()){
+            if(!vertex.isVisited()){
+                vertex.setVisited(true);
+                dfsRecursive(vertex);
+            }
+        }
+    }
+
+
     private void dfsWithStack(Vertex rootVertex) {
         this.stack.add(rootVertex);
         rootVertex.setVisited(true);
